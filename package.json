@@ -1,7 +1,7 @@
 {
-  "name": "react-boiler-plate",
+  "name": "Ecommerce-Website",
   "version": "1.0.0",
-  "description": "react boiler plate",
+  "description": "Ecommerce website built with MERN using a react boiler plate",
   "main": "index.js",
   "engine": {
     "node": "10.16.0",

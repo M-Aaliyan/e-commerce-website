@@ -48,6 +48,10 @@ function UploadProductPage(props) {
     const onSubmit = (event) => {
         event.preventDefault();
 
+        if(!state.title || !state.description || !state.price || !ContinentValue || Images.length===0){
+            return alert('Fill all the fields.');
+          }
+
         const variables = {
             writer: props.user.userData._id,
             title: state.title,
