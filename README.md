@@ -1,18 +1,5 @@
-Hello, My Friends  
-Thank you for having interest in this repository ! 
+This is an E commerce website I built using a boilerplate and created with the MERN stack
 
-To use this application, 
-
-1. make dev.js file inside config folder 
-2. put mongoDB info into dev.js file 
-3. Type  " npm install " inside the root directory  ( Download Server Dependencies ) 
-4. Type " npm install " inside the client directory ( Download Front-end Dependencies )
-
-
-If you have problem, feel free to ask me ^^ 
-
-You can watch the tutorial for this app.
-
-https://www.youtube.com/channel/UCFyXA9x8lpL3EYWeYhj4C4Q?view_as=subscriber
+I followed this youtube tutorial and redesigned and added onto it: https://www.youtube.com/watch?v=zaWtIkJgah4
 
 
