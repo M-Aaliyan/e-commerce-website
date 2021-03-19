@@ -1,5 +1,5 @@
 import React from 'react'
-import Icon from '@ant-design/icons';
+//import Icon from '@ant-design/icons';
 
 function Footer() {
     return (
@@ -8,7 +8,7 @@ function Footer() {
             flexDirection: 'column', alignItems: 'center',
             justifyContent: 'center', fontSize:'1rem'
         }}>
-           <p> Happy Coding  <Icon type="smile" /></p>
+           <p> </p>
         </div>
     )
 }

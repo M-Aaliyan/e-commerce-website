@@ -69,6 +69,7 @@ function LandingPage() {
 
         return <Col lg={6} md={8} xs={24}>
             <Card
+                key={index}
                 hoverable={true}
                 cover={ <a href={`/product/${product._id}`}><ImageSlider images={product.images} /></a>}
             >

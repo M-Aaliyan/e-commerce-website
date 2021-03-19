@@ -43,19 +43,14 @@ function CartPage(props) {
 
     const removeFromCart = (productId) => {
         dispatch(removeCartItem(productId))
-            .then(() => {
-                Axios.get('api/users/userCartInfo')
-                    .then(response => {
-                        if (response.data.success) {
-                            if (response.data.cartDetail.length <= 0) {
-                                setShowTotal(false)
-                            } else {
-                                calculateTotal(response.data.cartDetail)
-                            }
-                        } else {
-                            alert('Failed to get cart info')
-                        }
-                    })
+            .then((response) => {
+                if (response.payload.cartDetail.length <= 1) {
+                    setShowTotal(false)
+                } else {
+                    calculateTotal(response.payload.cartDetail)
+                }
+
+
             })
     }
 

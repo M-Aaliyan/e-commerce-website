@@ -132,7 +132,7 @@ router.get('/removeFromCart', auth, (req, res) => {
             })
 
             Product.find({ '_id': { $in: array } })
-                .populated('writer')
+                .populate('writer')
                 .exec((err, cartDetail) => {
                     return res.status(200).json({
                         cartDetail,
@@ -141,7 +141,6 @@ router.get('/removeFromCart', auth, (req, res) => {
                 })
         }
     )
-
 })
 
 router.get('/userCartInfo', auth, (req, res) => {
@@ -153,14 +152,17 @@ router.get('/userCartInfo', auth, (req, res) => {
                 return item.id
             })
 
+
             Product.find({ '_id': { $in: array } })
                 .populate('writer')
                 .exec((err, cartDetail) => {
-                    if(err) return res.status(400).send(err);
+                    if (err) return res.status(400).send(err);
                     return res.status(200).json({ success: true, cartDetail, cart })
                 })
+
         }
     )
 })
+
 
 module.exports = router;
