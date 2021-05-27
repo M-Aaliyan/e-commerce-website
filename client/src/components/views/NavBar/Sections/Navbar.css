@@ -1,11 +1,11 @@
-@import '~antd/dist/antd.css';
+@import "~antd/dist/antd.css";
 
 .menu {
   padding: 0 20px;
-  border-bottom: solid 1px #e8e8e8;
+  border-bottom: solid 1px #e60000;
   overflow: auto;
-  box-shadow: 0 0 30px #f3f1f1;
-  background-color: white;
+  /* box-shadow: 0 0 20px black; */
+  background-color: #e60000;
 }
 
 .menu__logo {
@@ -22,6 +22,10 @@
 .menu__container .ant-menu-item {
   padding: 0px 5px;
 }
+.ant-menu-item:hover {
+  color: black !important;
+  border-bottom: 2px solid black !important;
+}
 
 .menu__container .ant-menu-submenu-title {
   padding: 10px 20px;
@@ -31,17 +35,24 @@
 .menu__container .ant-menu-submenu-title a {
   display: inline-block;
   padding: 10px 15px;
+  font-size: large;
+  color: white;
+}
+
+.ant-menu-item a:hover {
+  color: black !important;
 }
 
 .menu__container .ant-menu-horizontal {
   border-bottom: none;
+  background-color: #e60000;
 }
 
 .menu__container .menu_left {
   float: left;
 }
 
-.menu__container .menu_rigth {
+.menu__container .menu_right {
   float: right;
 }
 
@@ -69,7 +80,7 @@
   }
 
   .menu_left,
-  .menu_rigth {
+  .menu_right {
     display: none;
   }
 

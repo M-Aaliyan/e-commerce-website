@@ -9,7 +9,7 @@ function ImageSlider(props) {
                 {props.images.map((image, index) => (
                     <div key={index}>
                         <img style={{ width: '100%', maxHeight: '150px'}}
-                            src={`https://fierce-sea-15567.herokuapp.com/${image}`} alt="productImage" />
+                            src={image} alt="productImage" />
                     </div>
                 ))}
             </Carousel>

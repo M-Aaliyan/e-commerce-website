@@ -21,7 +21,7 @@ function FileUpload(props) {
         Axios.post('/api/product/uploadImage', formData, config)
             .then(response =>{
                 if(response.data.success) {
-
+                    console.log("response=", response.data.image)
                     setImages([...Images, response.data.image])
                     props.refreshFunction([...Images, response.data.image])
 
@@ -67,7 +67,7 @@ function FileUpload(props) {
 
                 {Images.map((image, index) => (
                     <div onClick={()=> onDelete(image)}>
-                        <img style={{ minWidth: '300px', width: '300px', height: '240px' }} src={`https://fierce-sea-15567.herokuapp.com/${image}`} alt={`productImg-${index}`} />
+                        <img style={{ minWidth: '300px', width: '300px', height: '240px' }} src={image} alt={`productImg-${index}`} />
                     </div>
                 ))}
                 

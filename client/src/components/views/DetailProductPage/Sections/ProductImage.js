@@ -12,8 +12,8 @@ function ProductImage(props) {
 
             props.detail.images && props.detail.images.map(item => {
                 images.push({
-                    original:`https://fierce-sea-15567.herokuapp.com/${item}`,
-                    thumbnail: `https://fierce-sea-15567.herokuapp.com/${item}`,
+                    original:item,
+                    thumbnail: item,
                 })
             })
             setImages(images)

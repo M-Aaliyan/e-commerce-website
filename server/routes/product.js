@@ -2,6 +2,9 @@ const express = require('express');
 const router = express.Router();
 const { Product } = require("../models/Product")
 const multer = require('multer');
+const cloudinary = require('cloudinary').v2;
+const {CLOUD_NAME, API_KEY, API_SECRET} = require("../config/dev")
+
 
 const { auth } = require("../middleware/auth");
 
@@ -23,19 +26,36 @@ var storage = multer.diskStorage({
 
 var upload = multer({ storage: storage }).single("file")
 
+cloudinary.config({
+    cloud_name: CLOUD_NAME,
+    api_key:API_KEY,
+    api_secret: API_SECRET
+})
+
 
 //=================================
 //             Product
 //=================================
 
-router.post("/uploadImage", auth, (req, res) => {
+router.post("/uploadImage", upload, auth, async(req, res) => {
 
-    upload(req, res, err => {
-        if (err) {
-            return res.json({ success: false, err })
-        }
-        return res.json({ success: true, image: res.req.file.path, fileName: res.req.file.filename })
-    })
+    // upload(req, res, err => {
+    //     if (err) {
+    //         return res.json({ success: false, err })
+    //     }
+
+    //     const result = cloudinary.uploader.upload(req.file.path, (result) => {
+    //         resolve({
+    //             url: result.url,
+    //             id: result.public_id
+    //         })
+    //     });
+    //     return res.json({success: true, image: result.url});
+    //     //return res.json({ success: true, image: res.req.file.path, fileName: res.req.file.filename })
+    // })
+    const result = await cloudinary.uploader.upload(req.file.path);
+    
+    return res.json({success: true, image: result.url});
 
 });
 
