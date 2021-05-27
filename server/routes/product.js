@@ -3,7 +3,7 @@ const router = express.Router();
 const { Product } = require("../models/Product")
 const multer = require('multer');
 const cloudinary = require('cloudinary').v2;
-const {CLOUD_NAME, API_KEY, API_SECRET} = require("../config/dev")
+const {CLOUD_NAME, API_KEY, API_SECRET} = require("../config/prod")
 
 
 const { auth } = require("../middleware/auth");
