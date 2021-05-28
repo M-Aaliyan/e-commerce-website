@@ -3,7 +3,7 @@ const router = express.Router();
 const { Product } = require("../models/Product")
 const multer = require('multer');
 const cloudinary = require('cloudinary').v2;
-const {CLOUD_NAME, API_KEY, API_SECRET} = require("../config/prod")
+const config = require("../config/key");
 
 
 const { auth } = require("../middleware/auth");
@@ -27,9 +27,9 @@ var storage = multer.diskStorage({
 var upload = multer({ storage: storage }).single("file")
 
 cloudinary.config({
-    cloud_name: CLOUD_NAME,
-    api_key:API_KEY,
-    api_secret: API_SECRET
+    cloud_name: config.CLOUD_NAME,
+    api_key: config.API_KEY,
+    api_secret: config.API_SECRET
 })
 
 
