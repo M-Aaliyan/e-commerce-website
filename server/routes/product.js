@@ -27,9 +27,9 @@ var storage = multer.diskStorage({
 var upload = multer({ storage: storage }).single("file")
 
 cloudinary.config({
-    cloud_name: process.env.CLOUD_NAME,
-    api_key: process.env.API_KEY,
-    api_secret: process.env.API_SECRET
+    cloud_name: config.cloudNAME,
+    api_key: config.apiKEY,
+    api_secret: config.apiSECRET
 })
 
 
@@ -54,7 +54,7 @@ router.post("/uploadImage", upload, auth, async(req, res) => {
     //     //return res.json({ success: true, image: res.req.file.path, fileName: res.req.file.filename })
     // })
     
-    console.log("cloud name=", config.cloudNAME);
+    //console.log("cloud name=", config.cloudNAME);
     const result = await cloudinary.uploader.upload(req.file.path);
     
     return res.json({success: true, image: result.url});
