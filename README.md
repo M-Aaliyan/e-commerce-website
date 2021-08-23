@@ -1,5 +1,5 @@
 This is an E commerce website I built using a boilerplate and created with the MERN stack
-
-I followed this youtube tutorial and redesigned and added onto it: https://www.youtube.com/watch?v=zaWtIkJgah4
+ 
+ its a marketplace for buying and selling ship services such as cruise rides and motor boat rentals
 
 
